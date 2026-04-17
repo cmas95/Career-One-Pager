@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Su | Operations &amp; Strategy Leader</title>
+
+  <!-- Open Graph tags for LinkedIn / social sharing -->
+  <meta property="og:title" content="Alex Su | Operations & Strategy Leader">
+  <meta property="og:description" content="Cross-functional operations leader with experience across the full product-to-consumer value chain — from concept and planning, through manufacturing and sourcing, to marketplace delivery. Building toward general management in sports & retail.">
+  <meta property="og:type" content="website">
+  <!-- Replace with your actual hosted URL + image path once deployed -->
+  <meta property="og:image" content="hero.png">
+  <meta property="og:url" content="https://cmas95.github.io/Career-One-Pager/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --grey-100: #f5f5f5;
+      --grey-200: #e5e5e5;
+      --grey-400: #999999;
+      --grey-600: #757575;
+      --grey-700: #555555;
+      --accent: #111111;
+      --font: 'Helvetica Neue', Helvetica, Arial, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+
+    body {
+      font-family: var(--font);
+      color: var(--black);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--black);
+      height: 64px;
+      display: flex; align-items: center;
+      transition: box-shadow .3s;
+    }
+    .nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+    .nav-inner {
+      width: 100%; max-width: 1440px; margin: 0 auto;
+      padding: 0 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      color: var(--white); font-size: 18px; font-weight: 700;
+      letter-spacing: 2px; text-decoration: none; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .nav-tabs { display: flex; gap: 4px; overflow-x: auto; }
+    .nav-tab {
+      color: var(--grey-400); font-size: 12px; font-weight: 600;
+      letter-spacing: .8px; text-transform: uppercase; text-decoration: none;
+      padding: 8px 14px; border-radius: 20px;
+      transition: all .25s; white-space: nowrap;
+    }
+    .nav-tab:hover { color: var(--white); }
+    .nav-tab.active { color: var(--black); background: var(--white); }
+
+    /* ─── HERO ────────────────────────────────────────── */
+    .hero {
+      padding-top: 64px; min-height: 100vh;
+      display: flex; align-items: stretch;
+      background: var(--grey-100);
+    }
+    .hero-inner {
+      width: 100%; max-width: 1440px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 64px);
+    }
+    .hero-gallery {
+      position: relative; display: flex;
+      align-items: center; justify-content: center;
+      padding: 40px; overflow: hidden;
+      background: var(--grey-100);
+    }
+    .hero-gallery img {
+      max-height: 80vh; max-width: 100%; object-fit: contain;
+      filter: drop-shadow(0 8px 32px rgba(0,0,0,.08));
+    }
+    .hero-dots {
+      position: absolute; bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: 8px;
+    }
+    .hero-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--grey-400); cursor: pointer;
+      transition: background .3s, transform .3s;
+    }
+    .hero-dot.active { background: var(--black); transform: scale(1.3); }
+
+    .hero-details {
+      padding: 80px 48px 48px;
+      display: flex; flex-direction: column; justify-content: center;
+      background: var(--white);
+    }
+    .hero-label {
+      font-size: 16px; font-weight: 600; color: var(--grey-600);
+      letter-spacing: .5px; margin-bottom: 8px;
+    }
+    .hero-name {
+      font-size: clamp(40px, 5vw, 64px); font-weight: 800;
+      letter-spacing: -1px; line-height: 1.05; margin-bottom: 8px;
+    }
+    .hero-subtitle {
+      font-size: clamp(18px, 2.5vw, 24px); font-weight: 500;
+      color: var(--grey-700); margin-bottom: 28px;
+    }
+
+    .hero-chips {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;
+    }
+    .chip {
+      padding: 8px 18px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; letter-spacing: .5px;
+      text-transform: uppercase; cursor: pointer;
+      border: 1.5px solid var(--grey-200); color: var(--grey-700);
+      background: var(--white); text-decoration: none;
+      transition: all .25s;
+    }
+    .chip:hover { border-color: var(--black); color: var(--black); }
+    .chip.active { border-color: var(--black); color: var(--white); background: var(--black); }
+
+    .hero-desc {
+      font-size: 16px; line-height: 1.7; color: var(--grey-700);
+      margin-bottom: 28px; max-width: 480px;
+    }
+
+    .hero-meta { margin-bottom: 32px; }
+    .hero-meta-item {
+      font-size: 13px; color: var(--grey-600); margin-bottom: 4px;
+    }
+    .hero-meta-item span { color: var(--black); font-weight: 500; }
+
+    .hero-accordions { border-top: 1px solid var(--grey-200); }
+    .hero-accordion { border-bottom: 1px solid var(--grey-200); }
+    .hero-accordion-btn {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; font-family: var(--font);
+      font-size: 16px; font-weight: 600; color: var(--black);
+    }
+    .hero-accordion-icon {
+      font-size: 24px; font-weight: 300; transition: transform .3s;
+    }
+    .hero-accordion.open .hero-accordion-icon { transform: rotate(45deg); }
+    .hero-accordion-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s ease, padding .4s ease;
+    }
+    .hero-accordion.open .hero-accordion-body {
+      max-height: 400px; padding-bottom: 20px;
+    }
+    .hero-accordion-body ul { list-style: none; padding: 0; }
+    .hero-accordion-body li {
+      font-size: 14px; color: var(--grey-700); line-height: 1.7;
+      padding: 3px 0 3px 16px; position: relative;
+    }
+    .hero-accordion-body li::before {
+      content: ''; position: absolute; left: 0; top: 11px;
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--grey-400);
+    }
+
+    .scroll-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--black); font-size: 14px; font-weight: 600;
+      text-decoration: underline; text-underline-offset: 4px;
+      margin-top: 16px; cursor: pointer;
+      transition: opacity .2s;
+    }
+    .scroll-cta:hover { opacity: .7; }
+    .scroll-cta .arrow { display: inline-block; animation: bounceDown 2s infinite; }
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+
+    /* ─── ROLE SECTIONS ───────────────────────────────── */
+    .role-section {
+      min-height: 100vh; display: flex; align-items: stretch;
+      position: relative; overflow: hidden;
+    }
+    .role-section:nth-child(even) { background: var(--grey-100); }
+
+    .role-inner {
+      width: 100%; max-width: 1440px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+    .role-section:nth-child(odd) .role-inner { direction: ltr; }
+    .role-section:nth-child(even) .role-inner { direction: rtl; }
+    .role-section:nth-child(even) .role-inner > * { direction: ltr; }
+
+    .role-image {
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .role-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .role-section:hover .role-image img { transform: scale(1.03); }
+
+    .role-image-overlay {
+      position: absolute; top: 24px; left: 24px;
+      background: var(--white); padding: 6px 16px;
+      border-radius: 20px; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .role-details {
+      padding: 80px 48px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .role-badge-label {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--grey-600);
+      margin-bottom: 12px;
+    }
+    .role-title {
+      font-size: clamp(28px, 3.5vw, 42px); font-weight: 800;
+      line-height: 1.1; margin-bottom: 6px; letter-spacing: -.5px;
+    }
+    .role-title-sub {
+      font-size: clamp(16px, 2vw, 20px); font-weight: 400;
+      color: var(--grey-600); margin-bottom: 28px;
+    }
+
+    .role-context {
+      font-size: 14px; line-height: 1.7; color: var(--grey-700);
+      margin-bottom: 24px; max-width: 480px;
+      padding: 16px 20px; border-left: 3px solid var(--grey-200);
+      background: var(--grey-100); border-radius: 0 8px 8px 0;
+    }
+    .role-section:nth-child(even) .role-context {
+      background: var(--white);
+    }
+
+    .skills-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .pill {
+      padding: 8px 16px; border-radius: 20px;
+      font-size: 12px; font-weight: 600; letter-spacing: .5px;
+      border: 1.5px solid var(--grey-200); color: var(--grey-700);
+      background: var(--white);
+      transition: all .25s;
+    }
+    .pill:hover { border-color: var(--black); color: var(--black); }
+
+    .competency-list { list-style: none; }
+    .competency-item {
+      border-bottom: 1px solid var(--grey-200); overflow: hidden;
+    }
+    .competency-item:first-child { border-top: 1px solid var(--grey-200); }
+    .competency-header {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0; font-family: var(--font);
+      font-size: 15px; font-weight: 600; color: var(--black);
+      text-align: left;
+    }
+    .competency-icon {
+      font-size: 22px; font-weight: 300;
+      transition: transform .3s;
+      flex-shrink: 0; margin-left: 16px;
+    }
+    .competency-item.open .competency-icon { transform: rotate(45deg); }
+    .competency-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease;
+    }
+    .competency-item.open .competency-body { max-height: 200px; }
+    .competency-body p {
+      font-size: 14px; line-height: 1.7; color: var(--grey-700);
+      padding-bottom: 18px;
+    }
+
+    /* ─── SCROLL ANIMATIONS ───────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── IMPACT SECTION ──────────────────────────────── */
+    .impact-section {
+      padding: 100px 48px; background: var(--black); color: var(--white);
+      text-align: center;
+    }
+    .impact-inner {
+      max-width: 1000px; margin: 0 auto;
+    }
+    .impact-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--grey-400);
+      margin-bottom: 8px;
+    }
+    .impact-title {
+      font-size: clamp(32px, 4vw, 48px); font-weight: 800;
+      letter-spacing: -1px; margin-bottom: 48px;
+    }
+    .impact-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 40px; margin-bottom: 56px;
+    }
+    .impact-stat {
+      text-align: center;
+    }
+    .impact-number {
+      font-size: clamp(36px, 5vw, 56px); font-weight: 800;
+      letter-spacing: -1px; line-height: 1;
+      margin-bottom: 8px;
+    }
+    .impact-number.words {
+      font-size: clamp(22px, 3vw, 32px); letter-spacing: 1px;
+      line-height: 1.2;
+    }
+    .impact-desc {
+      font-size: 14px; color: var(--grey-400);
+      line-height: 1.4;
+    }
+    .impact-closing {
+      font-size: 18px; line-height: 1.7; color: var(--grey-400);
+      max-width: 600px; margin: 0 auto;
+    }
+    .impact-closing strong { color: var(--white); font-weight: 600; }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    .footer {
+      background: var(--grey-100); color: var(--grey-600);
+      padding: 48px; text-align: center;
+    }
+    .footer-brand {
+      font-size: 14px; font-weight: 700; color: var(--black);
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .footer-sub { font-size: 13px; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .nav-inner { padding: 0 24px; }
+      .nav-tab { font-size: 11px; padding: 6px 10px; }
+      .hero-details, .role-details { padding: 48px 32px; }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner { flex-direction: column; gap: 4px; height: auto; }
+      .nav { height: auto; padding: 10px 0; }
+      .nav-tabs { gap: 2px; justify-content: center; }
+      .nav-tab { font-size: 10px; padding: 5px 8px; }
+      html { scroll-padding-top: 100px; }
+
+      .hero { padding-top: 100px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-gallery { min-height: 60vh; }
+
+      .role-inner { grid-template-columns: 1fr; }
+      .role-section:nth-child(even) .role-inner { direction: ltr; }
+      .role-image { min-height: 50vh; }
+      .role-details { padding: 40px 24px; }
+
+      .impact-section { padding: 60px 24px; }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name { font-size: 36px; }
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">Alex Su</a>
+      <div class="nav-tabs">
+        <a href="#planning" class="nav-tab active">Planning</a>
+        <a href="#supply-chain" class="nav-tab">Supply Chain</a>
+        <a href="#global-ops" class="nav-tab">Global Ops</a>
+        <a href="#innovation" class="nav-tab">Innovation</a>
+        <a href="#culture" class="nav-tab">Culture</a>
+        <a href="#fuel" class="nav-tab">FUEL Program</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-gallery">
+        <img src="hero.png" alt="Alex Su">
+        <div class="hero-dots">
+          <span class="hero-dot active" data-target="hero"></span>
+          <span class="hero-dot" data-target="planning"></span>
+          <span class="hero-dot" data-target="supply-chain"></span>
+          <span class="hero-dot" data-target="global-ops"></span>
+          <span class="hero-dot" data-target="innovation"></span>
+          <span class="hero-dot" data-target="culture"></span>
+          <span class="hero-dot" data-target="fuel"></span>
+        </div>
+      </div>
+      <div class="hero-details">
+        <div class="hero-label">Career Profile</div>
+        <h1 class="hero-name">Alex Su</h1>
+        <h2 class="hero-subtitle">Building Toward General Management<br>Sports &amp; Retail</h2>
+
+        <div class="hero-chips">
+          <a href="#planning" class="chip active">Planning</a>
+          <a href="#supply-chain" class="chip">Supply Chain</a>
+          <a href="#global-ops" class="chip">Global Ops</a>
+          <a href="#innovation" class="chip">Innovation</a>
+          <a href="#culture" class="chip">Culture</a>
+          <a href="#fuel" class="chip">FUEL</a>
+        </div>
+
+        <p class="hero-desc">
+          Cross-functional operations leader with experience across the full
+          product-to-consumer value chain &mdash; from concept and planning, through
+          manufacturing and sourcing, to marketplace delivery. Built for the
+          intersection of strategy and execution in sports and retail.
+        </p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">Focus: <span>General Management &middot; Sports &amp; Retail</span></div>
+          <div class="hero-meta-item">Expertise: <span>Demand Planning &middot; Supply Chain &middot; Inventory Strategy &middot; Program Leadership</span></div>
+          <div class="hero-meta-item">Scope: <span>North America &middot; Global &middot; Cross-Geo</span></div>
+        </div>
+
+        <div class="hero-accordions">
+          <div class="hero-accordion">
+            <button class="hero-accordion-btn">
+              Key Strengths
+              <span class="hero-accordion-icon">+</span>
+            </button>
+            <div class="hero-accordion-body">
+              <ul>
+                <li>Enterprise-scale inventory and supply chain strategy</li>
+                <li>Consumer-led demand planning and assortment optimization</li>
+                <li>Cross-functional team leadership and talent development</li>
+                <li>Innovation in planning tools, AI enablement, and process design</li>
+                <li>Global culture and community activation at scale</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hero-accordion">
+            <button class="hero-accordion-btn">
+              Career Overview
+              <span class="hero-accordion-icon">+</span>
+            </button>
+            <div class="hero-accordion-body">
+              <ul>
+                <li>6 roles spanning the full product-to-consumer value chain &mdash; from concept and planning, through manufacturing and sourcing, to marketplace delivery &mdash; across direct-to-consumer, global demand &amp; supply management, and leadership programs</li>
+                <li>Led teams of analysts, cross-functional partners, and global stakeholders</li>
+                <li>Delivered 15% demand growth and 10+ hours/month operational efficiency gains</li>
+                <li>Authored enterprise vision documents for VP+ leadership alignment</li>
+                <li>Graduate of executive-sponsored global leadership development program (VP-nominated, 16-month accelerated journey)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hero-accordion">
+            <button class="hero-accordion-btn">
+              Scope &amp; Scale
+              <span class="hero-accordion-icon">+</span>
+            </button>
+            <div class="hero-accordion-body">
+              <ul>
+                <li>North America, Global, and Cross-Geo coverage</li>
+                <li>Direct-to-consumer, demand &amp; supply management, and manufacturing networks</li>
+                <li>Progressed from individual contributor to team leader to program lead</li>
+                <li>Managed division P&amp;L, product adoption, and sourcing strategy decisions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <a href="#planning" class="scroll-cta">
+          Explore the Journey <span class="arrow">&darr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLE 1: ASSORTMENT PLANNING ═══ -->
+  <section class="role-section" id="planning">
+    <div class="role-inner">
+      <div class="role-image">
+        <img src="nd-ap.jpg" alt="Assortment Planning">
+        <div class="role-image-overlay">Planning</div>
+      </div>
+      <div class="role-details fade-up">
+        <span class="role-badge-label">North America &middot; Direct-to-Consumer</span>
+        <h2 class="role-title">Assortment Planner</h2>
+        <p class="role-title-sub">Kids Footwear &middot; Direct Channel</p>
+
+        <div class="skills-pills">
+          <span class="pill">Assortment Strategy</span>
+          <span class="pill">Demand Forecasting</span>
+          <span class="pill">Pricing Strategy</span>
+        </div>
+
+        <ul class="competency-list">
+          <li class="competency-item">
+            <button class="competency-header">
+              Consumer-Led Growth
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Owned kids footwear assortment planning, driving 15% demand growth by aligning assortment depth with consumer demand signals to optimize sell-through across the direct channel.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Business Acumen
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Built foundational understanding of assortment, demand, and retail metrics. Developed analytical fluency across the end-to-end planning lifecycle from forecasting through in-season management.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLE 2: SUPPLY CHAIN ═══ -->
+  <section class="role-section" id="supply-chain">
+    <div class="role-inner">
+      <div class="role-image">
+        <img src="nd-msc.jpg" alt="Supply Chain">
+        <div class="role-image-overlay">Supply Chain</div>
+      </div>
+      <div class="role-details fade-up">
+        <span class="role-badge-label">North America &middot; Direct-to-Consumer</span>
+        <h2 class="role-title">Marketplace Supply Chain Lead</h2>
+        <p class="role-title-sub">Inventory Positioning &amp; Product Readiness</p>
+
+        <div class="skills-pills">
+          <span class="pill">Team Leadership</span>
+          <span class="pill">Inventory Execution</span>
+          <span class="pill">Product Readiness</span>
+        </div>
+
+        <ul class="competency-list">
+          <li class="competency-item">
+            <button class="competency-header">
+              Operational Excellence
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Established clear inventory readiness tools and operating rhythms that reduced ad-hoc work and improved execution speed across the distribution network.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Cross-Functional Leadership
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Led weekly cross-functional inventory positioning strategy sessions, aligning supply chain, merchandising, and channel partners on direct-to-consumer network priorities.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Talent Development
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Managed and coached a team of analysts; prioritized work, built delivery discipline, and created development pathways for individual contributors.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLE 3: GLOBAL OPS ═══ -->
+  <section class="role-section" id="global-ops">
+    <div class="role-inner">
+      <div class="role-image">
+        <img src="glbl-dsm.jpg" alt="Global Inventory Operations">
+        <div class="role-image-overlay">Global Ops</div>
+      </div>
+      <div class="role-details fade-up">
+        <span class="role-badge-label">Global &middot; Demand &amp; Supply Management</span>
+        <h2 class="role-title">Global Inventory Operations</h2>
+        <p class="role-title-sub">Inventory Health &amp; Portfolio Management</p>
+
+        <div class="skills-pills">
+          <span class="pill">Inventory Strategy</span>
+          <span class="pill">Margin Trade-offs</span>
+          <span class="pill">Enterprise Alignment</span>
+        </div>
+
+        <ul class="competency-list">
+          <li class="competency-item">
+            <button class="competency-header">
+              Measurable Impact
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Delivered global reductions in excess inventory and lead time through a new inventory health methodology that became the enterprise standard across all regions.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Stakeholder Alignment
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Navigated cross-functional trade-offs across supply chain, merchandising, and finance to align on inventory coverage targets, balancing competing regional priorities.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Operational Excellence
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Implemented portfolio management and monthly business review dashboards, improving project focus and saving regional teams 10+ hours per month in reporting overhead.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLE 4: INNOVATION ═══ -->
+  <section class="role-section" id="innovation">
+    <div class="role-inner">
+      <div class="role-image">
+        <img src="dsm-innov.jpg" alt="Planning Innovation">
+        <div class="role-image-overlay">Innovation</div>
+      </div>
+      <div class="role-details fade-up">
+        <span class="role-badge-label">Global &middot; Planning Innovation</span>
+        <h2 class="role-title">Global Planning Innovation</h2>
+        <p class="role-title-sub">Strategic Vision &amp; Platform Design</p>
+
+        <div class="skills-pills">
+          <span class="pill">Strategic Framing</span>
+          <span class="pill">Process Improvement</span>
+          <span class="pill">Enterprise Alignment</span>
+        </div>
+
+        <ul class="competency-list">
+          <li class="competency-item">
+            <button class="competency-header">
+              Strategic Vision
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Authored the &ldquo;Inventory Planning of the Future&rdquo; vision and business case to guide strategic investment decisions at enterprise scale.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Innovation &amp; Transformation
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Integrated standard cost modeling into the demand &amp; supply planning platform, unlocking new financial insights for inventory decisions previously unavailable to planners.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Executive Communication
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Translated future-state vision into guiding principles that senior leaders (VP and above) could align and act on with confidence, bridging the gap between strategy and execution.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLE 5: CULTURE ═══ -->
+  <section class="role-section" id="culture">
+    <div class="role-inner">
+      <div class="role-image">
+        <img src="pride-cos.jpg" alt="Culture & Community">
+        <div class="role-image-overlay">Culture</div>
+      </div>
+      <div class="role-details fade-up">
+        <span class="role-badge-label">Global &middot; Employee Resource Network</span>
+        <h2 class="role-title">Chief of Staff, Global Pride Network</h2>
+        <p class="role-title-sub">Culture &amp; Community Activation</p>
+
+        <div class="skills-pills">
+          <span class="pill">Global Influencing</span>
+          <span class="pill">Program Activation</span>
+        </div>
+
+        <ul class="competency-list">
+          <li class="competency-item">
+            <button class="competency-header">
+              Inclusive Leadership
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Led global Pride activations by intentionally centering diverse perspectives and inclusive collaboration across markets and business functions.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Empowering Others
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Created space for teammates to lead initiatives, building confidence and leadership capability through influence rather than positional authority.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Global Coordination
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Aligned cross-network partners across time zones and geographies to deliver one of the organization's largest global employee activations, requiring coordination at enterprise scale.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLE 6: FUEL ═══ -->
+  <section class="role-section" id="fuel">
+    <div class="role-inner">
+      <div class="role-image">
+        <img src="fuel.jpg" alt="FUEL Leadership Program">
+        <div class="role-image-overlay">FUEL</div>
+      </div>
+      <div class="role-details fade-up">
+        <span class="role-badge-label">Global &middot; Executive-Sponsored Leadership Program</span>
+        <h2 class="role-title">FUEL Leadership Program</h2>
+        <p class="role-title-sub">Manufacturing &amp; Sourcing &middot; 16-Month Rotation</p>
+
+        <p class="role-context">
+          Executive-sponsored global leadership development program for future operations leaders.
+          Participants are nominated by senior leadership (VP and above) for a 16-month accelerated
+          journey offering the experiences, resources, and community needed for growth and impact
+          across the global operations network.
+        </p>
+
+        <div class="skills-pills">
+          <span class="pill">P&amp;L Management</span>
+          <span class="pill">Product Adoption</span>
+          <span class="pill">Partner Management</span>
+        </div>
+
+        <ul class="competency-list">
+          <li class="competency-item">
+            <button class="competency-header">
+              P&amp;L Ownership
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Managed a footwear manufacturing division P&amp;L while learning and influencing the global manufacturing network, balancing capacity, cost, sourcing strategy, and product adoption decisions.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Sourcing Strategy
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Built sourcing strategy and tools to enable early-stage flexibility through multi-sourcing, improving decision optionality while reducing downstream capacity risk across the supply network.</p>
+            </div>
+          </li>
+          <li class="competency-item">
+            <button class="competency-header">
+              Change Management
+              <span class="competency-icon">+</span>
+            </button>
+            <div class="competency-body">
+              <p>Led change in a high-tenure manufacturing organization by listening first, incorporating analyst and factory feedback, and introducing AI-enabled tools to significantly reduce workload and friction.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ IMPACT SUMMARY ═══ -->
+  <section class="impact-section" id="impact">
+    <div class="impact-inner fade-up">
+      <div class="impact-label">By the Numbers</div>
+      <h2 class="impact-title">Impact at a Glance</h2>
+
+      <div class="impact-grid">
+        <div class="impact-stat">
+          <div class="impact-number words">Plan. Make.<br>Move. Sell.</div>
+          <div class="impact-desc">Experience across the full product-to-consumer value chain, from concept through delivery</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">4</div>
+          <div class="impact-desc">Regions influenced &mdash; North America, Greater China, Asia Pacific &amp; Latin America, and Europe, Middle East &amp; Africa</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number words">Future Leader</div>
+          <div class="impact-desc">Recognized as high-performing talent and selected for an executive-sponsored global program admitting only 6&ndash;8 participants per year from operations worldwide</div>
+        </div>
+      </div>
+
+      <p class="impact-closing">
+        A career built across the full value chain &mdash; with each chapter adding new
+        capability, from consumer-led planning to global inventory strategy to manufacturing
+        transformation. Now bringing that breadth together with a bias toward
+        <strong>AI-enabled tools and modern operating models</strong> to drive the next
+        generation of sports and retail operations.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-brand">Alex Su</div>
+    <div class="footer-sub">&copy; 2025 &middot; Operations &amp; Strategy Leader &middot; Sports &amp; Retail</div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    const sections = document.querySelectorAll('.role-section');
+    const tabs = document.querySelectorAll('.nav-tab');
+    const dots = document.querySelectorAll('.hero-dot');
+    const chips = document.querySelectorAll('.chip');
+
+    const tabMap = {};
+    tabs.forEach(t => { tabMap[t.getAttribute('href').slice(1)] = t; });
+    const chipMap = {};
+    chips.forEach(c => { chipMap[c.getAttribute('href').slice(1)] = c; });
+
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          tabs.forEach(t => t.classList.remove('active'));
+          if (tabMap[id]) tabMap[id].classList.add('active');
+          chips.forEach(c => c.classList.remove('active'));
+          if (chipMap[id]) chipMap[id].classList.add('active');
+
+          dots.forEach(d => d.classList.remove('active'));
+          const ids = ['hero','planning','supply-chain','global-ops','innovation','culture','fuel'];
+          const idx = ids.indexOf(id);
+          if (idx >= 0 && dots[idx]) dots[idx].classList.add('active');
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(s => sectionObserver.observe(s));
+
+    const heroObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tabs.forEach(t => t.classList.remove('active'));
+          tabs[0].classList.add('active');
+          dots.forEach(d => d.classList.remove('active'));
+          dots[0].classList.add('active');
+          chips.forEach(c => c.classList.remove('active'));
+          chips[0].classList.add('active');
+        }
+      });
+    }, { threshold: 0.5 });
+    heroObserver.observe(document.getElementById('hero'));
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const target = document.getElementById(dot.dataset.target);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    document.querySelectorAll('.hero-accordion-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.hero-accordion').classList.toggle('open');
+      });
+    });
+
+    document.querySelectorAll('.competency-header').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.competency-item').classList.toggle('open');
+      });
+    });
+
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+  </script>
+
+</body>
+</html>
